@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Gestionnaire de transactions</title>
+</head>
+
+<body>
+  <h1>Gestionnaire de transactions</h1>
+  <div class="calculator">
+    <form>
+      <fieldset>
+        <legend>Champs à remplir</legend>
+        <label for="euro-input">Entrer la somme à recevoir (€): </label>
+        <input type="number" id="euro-input" placeholder="eg 300" min="0" required>
+        <label for="fcfa-input">Entrer la somme reçue (FCFA):</label>
+        <input type="number" id="fcfa-input" placeholder="eg 150 000" min="0" required>
+        <label for="percentage">Pourcentage du bénéfice (%): </label>
+        <input type="number" id="percentage" placeholder="eg 4,5" min="0" required>
+        <button type="button" id="button-el">Calculer</button>
+      </fieldset>
+    </form>
+  </div>
+  <div class="result">
+    <table>
+      <thead>
+        <tr>
+          <th class="titles">Montant min espéré</th>
+          <th class="titles">Montant reçu</th>
+          <th class="titles">Différence générale</th>
+          <th class="titles">Différence individuelle</th>
+          <th class="titles">Montant à envoyer</th>
+          <th class="titles">Bénéfice final</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="values" id="min-exp-amount"></td>
+          <td class="values" id="amount-received"></td>
+          <td class="values" id="general-loss"></td>
+          <td class="values" id="indiv-loss"></td>
+          <td class="values" id="send-amount"></td>
+          <td class="values" id="final-gain"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
