@@ -9,7 +9,7 @@ const generalLoss = document.getElementById("general-loss");
 const indivLoss = document.getElementById("indiv-loss");
 const sendAmount = document.getElementById("send-amount");
 const finalGain = document.getElementById("final-gain");
-const tooMuchLoss = 2000;
+const tooMuchLoss = -2000;
 
 const calculate = () => {
   const euroValue = euroInput.value;
@@ -24,9 +24,9 @@ const calculate = () => {
 
   minExpAmountValue = euroValue * 655;
   amountReceivedValue = fcfaValue;
-  generalLossValue = minExpAmountValue - amountReceivedValue;
+  generalLossValue = amountReceivedValue - minExpAmountValue;
   
-  if (generalLossValue > tooMuchLoss) {
+  if (generalLossValue < tooMuchLoss) {
     indivLossValue = generalLossValue / 2;
     finalGainValue = ((amountReceivedValue * percentageValue) / 100) - indivLossValue;
   } else {
@@ -39,9 +39,9 @@ const calculate = () => {
   minExpAmount.textContent = minExpAmountValue;
   amountReceived.textContent = amountReceivedValue;
   if (generalLossValue < 0) {
-    generalLoss.textContent =  generalLossValue + "(Gain )";
+    generalLoss.textContent = generalLossValue + " (Perte)";
   } else {
-    generalLoss.textContent = '-' + generalLossValue + "(Perte)";
+    generalLoss.textContent = generalLossValue + " (Gain)";
   }
   indivLoss.textContent = indivLossValue;
   sendAmount.textContent = sendAmountValue;
