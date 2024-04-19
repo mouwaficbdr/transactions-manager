@@ -28,7 +28,7 @@ const calculate = () => {
   
   if (generalLossValue < tooMuchLoss) {
     indivLossValue = generalLossValue / 2;
-    finalGainValue = ((amountReceivedValue * percentageValue) / 100) - indivLossValue;
+    finalGainValue = ((amountReceivedValue * percentageValue) / 100) + indivLossValue;
   } else {
     indivLossValue = 0;
     finalGainValue = (amountReceivedValue * percentageValue) / 100;
