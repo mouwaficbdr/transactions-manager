@@ -22,7 +22,7 @@ const calculate = () => {
   let sendAmountValue;
   let finalGainValue;
 
-  minExpAmountValue = euroValue * 655;
+  minExpAmountValue = euroValue * 650;
   amountReceivedValue = fcfaValue;
   generalLossValue = amountReceivedValue - minExpAmountValue;
   
